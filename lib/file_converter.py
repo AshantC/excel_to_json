@@ -22,12 +22,9 @@ class FileConverter:
         df.to_json(output_file_path, orient="records", indent=4)
         
         print(f"Success")
-   
-# def file_converter(source_dir, output_dir)->FileConverter:
-#     return FileConverter().file_converter(source_dir, output_dir)
 
-# file_converter(source_dir, output_dir)
 
-def get_conversion(source_dir, output_dir)->FileConverter:
-    return FileConverter().conversion(source_dir, output_dir)
-
+def get_converter()->FileConverter:
+    return FileConverter()
+    
+converter = FileConverter()
