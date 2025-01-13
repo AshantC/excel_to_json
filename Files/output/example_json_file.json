@@ -1,0 +1,32 @@
+[
+    {
+        "SN":1,
+        "Name":"Alice",
+        "Country":"USA",
+        "Country_Code":"US"
+    },
+    {
+        "SN":2,
+        "Name":"Bob",
+        "Country":"India",
+        "Country_Code":"IN"
+    },
+    {
+        "SN":3,
+        "Name":"Charlie",
+        "Country":"Germany",
+        "Country_Code":"DE"
+    },
+    {
+        "SN":4,
+        "Name":"Diana",
+        "Country":"Canada",
+        "Country_Code":"CA"
+    },
+    {
+        "SN":5,
+        "Name":"Eve",
+        "Country":"Australia",
+        "Country_Code":"AU"
+    }
+]

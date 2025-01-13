@@ -1,9 +1,11 @@
 import pandas as pd
 import os
-
+import logging
+from .logging_app import log_handler
 
 class FileConverter: 
-    def __init__(self):...
+    def __init__(self):
+        self.log_handler = log_handler()
         
     def conversion(self, source_dir:str, output_dir:str):
         # Excel file (source file)
@@ -22,9 +24,9 @@ class FileConverter:
         df.to_json(output_file_path, orient="records", indent=4)
         
         print(f"Success")
+        logging.info(f"{excel_file} is converted into {output_file} successfully")
 
 
 def get_converter()->FileConverter:
     return FileConverter()
     
-converter = FileConverter()
