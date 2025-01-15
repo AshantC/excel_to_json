@@ -1,6 +1,8 @@
 # File Converter App
 ## With Docker
-# docker-compose up --build
+```
+docker-compose up --build
+```
 ## Without Docker
 
 ### Start server in api mode
