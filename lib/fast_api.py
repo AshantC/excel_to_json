@@ -7,6 +7,7 @@ app = FastAPI(title="File Conversion", docs_url="/")
 @app.get("/convert-file")
 async def trigger(initiator:str, output_dir: str, app:FileConverter=Depends(get_converter)):
     input_dir = os.getenv("SOURCE_DIR")
+    
     output_dir = os.path.join("Files/",output_dir)
     try:
         os.makedirs(output_dir, exist_ok=True)
