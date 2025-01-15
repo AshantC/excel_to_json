@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  excel_to_json_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - SOURCE_DIR=Files/source
+      - OUTPUT_DIR=Files/output
+    command: python main.py --mode api  # Default to API mode

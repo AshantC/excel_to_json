@@ -24,7 +24,7 @@ def main(mode):
     match mode:
         case 'api':
             print("Running the API mode...")
-            uvicorn.run('lib.fast_api:app', reload=True)
+            uvicorn.run('lib.fast_api:app', host="0.0.0.0", reload=True)
         
         case 'manual':
             print(f"Running the Manual mode with input: {input_dir} and {output_dir}...")
