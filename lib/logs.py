@@ -4,8 +4,8 @@ from logging.handlers import RotatingFileHandler
 
 def log_handler():
     handler = RotatingFileHandler(
-        'logging_app.log',
-        maxBytes = 10_000_000, 
+        'logs.log',
+        maxBytes = 5 * 1024 * 1024, 
         backupCount = 5
     )
 

@@ -27,9 +27,10 @@ def main(mode):
             uvicorn.run('lib.fast_api:app', reload=True)
         
         case 'manual':
-            print(f"RUnning the Manual mode with input: {input_dir} and {output_dir}...")
+            print(f"Running the Manual mode with input: {input_dir} and {output_dir}...")
             app = FileConverter()
             app.conversion(input_dir, output_dir)
+            # app.file_name(input_dir)
 
 if __name__ == "__main__":
     main()

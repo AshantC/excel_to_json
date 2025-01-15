@@ -2,6 +2,8 @@
 *.pyc
 *.pyo
 __pycache__/
+**/__pycache__/
+
 
 # Virtual environment
 env/
@@ -65,3 +67,5 @@ docker-compose.override.yml
 
 # Other
 *.sqlite3
+
+
