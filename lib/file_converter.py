@@ -19,6 +19,7 @@ class FileConverter:
         except Exception as e:
             print(f"Something went wrong on all_files: {e}")
             logging.error(f"Something went wrong on all_files : {e}")
+        return all_files
         
     
         
