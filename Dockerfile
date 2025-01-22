@@ -20,4 +20,5 @@ EXPOSE 8000
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 # Default command to run the application in API mode
-CMD ["python", "main.py", "--mode", "api"]
+# ENTRYPOINT [ "python","main.py","--mode", "api"]
+CMD ["python", "main.py","--mode", "api"]

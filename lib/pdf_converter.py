@@ -1,38 +1,28 @@
 import PyPDF2
 import pandas as pd
+from docx import Document
 
-# File Path
-pdf_file = "Files/pdf/sample_table.pdf"
-output_excel = "sample_table_output.xlsx"
+# File paths
+pdf_file = "Files/pdf/Literature.pdf"
+output_excel = "Files/Output/literature_output.xlsx"
+output_file = "Files/Output/literature.docs"
 
-# Function to extract text from a PDF
+# Function to extract text from pdf
 def extract_text_from_pdf(pdf_file):
     text = ""
     with open(pdf_file, 'rb') as file:
         reader = PyPDF2.PdfReader(file)
         for page in reader.pages:
             text += page.extract_text()
+
+    print("----------------- extract_text_from_pdf --------------------")
+    print(text)
     return text
 
-# Function to parse text into a table (adjust based on your PDF's structure)
-def parse_text_to_table(text):
-    lines = text.split("\n")
-    data = [line.split() for line in lines] # Split lines into columns by whitespace
-    return data
-
-# Extract and process the PDF
-try:
-    # Extract text from the PDF
-    pdf_text = extract_text_from_pdf(pdf_file)
-    
-    # Parse the extracted text into a table
-    table_data = parse_text_to_table(pdf_text)
-    
-    # Convert to a pandas DataFrame
-    df = pd.DataFrame(table_data)
-    
-    # Save to Excel
-    df.to_excel(output_excel, index=False, header=False)
-    
-except Exception as e:
-    print(f"An error occured: {e}")
+def pdf_to_text(pdf_file, output_file):
+    reader = PyPDF2.PdfReader(pdf_file)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        for page in reader.pages:
+            f.write(page.extract_text() + '\n')
+            
+pdf_to_text(pdf_file, output_file)
