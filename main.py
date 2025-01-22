@@ -5,7 +5,11 @@ import click
 import uvicorn
 
 @click.command()
-@click.option('--mode', type=click.Choice(['api', 'manual'], case_sensitive=False,), help="Run the app in 'api' or 'manual' mode.")
+@click.option(
+    '--mode',
+    type=click.Choice(['api', 'manual'], case_sensitive=False,),
+    help="Run the app in 'api' or 'manual' mode."
+)
 
 
 
@@ -21,7 +25,7 @@ def main(mode):
     os.makedirs(output_dir, exist_ok=True)
     
     # Use match expression to handle different modes
-    match mode:
+    match mode.lower():
         case 'api':
             print("Running the API mode...")
             uvicorn.run('lib.fast_api:app', host="0.0.0.0", reload=True)
